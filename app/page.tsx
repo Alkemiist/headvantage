@@ -44,19 +44,14 @@ export default function Home() {
             </div>
 
             {/* Content */}
-            <div className="space-y-6">
+            <div className="space-y-6 text-left">
               <Heading level={2} className="mb-4">
-                Built for the Future
+                The Hardware
               </Heading>
               <p className="text-muted-foreground leading-relaxed">
-                Our platform leverages cutting-edge technology to deliver real-time insights 
-                that adapt to your business needs. From edge computing to AI-powered analytics, 
-                we&apos;re building the infrastructure for tomorrow&apos;s decision-making.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                With 99.9% uptime and sub-millisecond response times, our solution ensures 
-                you never miss a critical moment. Trusted by industry leaders across 
-                broadcasting, healthcare, and professional sports.
+                Our hardware system combines HD video capture with superior image stability, integrated eye-tracking with gaze 
+                overlay, and impact sensors with telemetry data capture. All data flows through our proprietary communication 
+                and compression protocol for real-time transmission with minimal latency.
               </p>
             </div>
           </div>
