@@ -126,6 +126,7 @@ export function ContactForm() {
                     error={errors.name?.message}
                     disabled={isSubmitting}
                     placeholder="Your full name"
+                    className='border border-white/16'
                   />
 
                   <Input
@@ -135,6 +136,7 @@ export function ContactForm() {
                     error={errors.email?.message}
                     disabled={isSubmitting}
                     placeholder="your.email@company.com"
+                    className='border border-white/16'
                   />
                 </div>
 
@@ -144,6 +146,7 @@ export function ContactForm() {
                   error={errors.company?.message}
                   disabled={isSubmitting}
                   placeholder="Your company name"
+                  className='border border-white/16'
                 />
 
                 <Textarea
@@ -153,6 +156,8 @@ export function ContactForm() {
                   disabled={isSubmitting}
                   placeholder="Tell us about your project and how we can help..."
                   rows={5}
+                  maxLength={15}
+                  className="resize-none border border-white/16"
                 />
 
                 {/* Submit Status */}

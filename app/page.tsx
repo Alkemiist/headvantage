@@ -35,7 +35,7 @@ export default function Home() {
             {/* Image */}
             <div className="relative h-96 lg:h-[500px] rounded-lg overflow-hidden">
               <ResponsiveImage
-                src="/images/technology-showcase.svg"
+                src="/images/helmet800x600.png"
                 alt="Advanced technology and data visualization dashboard"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"

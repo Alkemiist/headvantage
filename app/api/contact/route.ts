@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import { z } from "zod"
+import { Resend } from "resend"
 
 /**
  * Contact form API route
@@ -14,6 +15,9 @@ import { z } from "zod"
 
 // Rate limiting store (in production, use Redis or similar)
 const rateLimitStore = new Map<string, { count: number; resetTime: number }>()
+
+// Initialize Resend
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 // Contact form validation schema
 const contactSchema = z.object({
@@ -73,13 +77,73 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ success: true })
     }
 
-    // In a real application, you would:
-    // 1. Save to database
-    // 2. Send email notification
-    // 3. Add to CRM
-    // 4. Log the submission
-    
-    // For now, we'll simulate success
+    // Send email notification
+    try {
+      const emailData = {
+        from: process.env.FROM_EMAIL || "noreply@headvantage.com",
+        to: [process.env.CONTACT_EMAIL || "contact@headvantage.com"],
+        subject: `New Contact Form Submission from ${validatedData.name}`,
+        html: `
+          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+            <h2 style="color: #333; border-bottom: 2px solid #007bff; padding-bottom: 10px;">
+              New Contact Form Submission
+            </h2>
+            
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+              <h3 style="color: #495057; margin-top: 0;">Contact Details</h3>
+              <p><strong>Name:</strong> ${validatedData.name}</p>
+              <p><strong>Email:</strong> ${validatedData.email}</p>
+              ${validatedData.company ? `<p><strong>Company:</strong> ${validatedData.company}</p>` : ''}
+              <p><strong>Submitted:</strong> ${new Date().toLocaleString()}</p>
+              <p><strong>IP Address:</strong> ${ip}</p>
+            </div>
+            
+            <div style="background: #ffffff; padding: 20px; border: 1px solid #dee2e6; border-radius: 8px;">
+              <h3 style="color: #495057; margin-top: 0;">Message</h3>
+              <p style="white-space: pre-wrap; line-height: 1.6;">${validatedData.message}</p>
+            </div>
+            
+            <div style="margin-top: 20px; padding: 15px; background: #e9ecef; border-radius: 8px; font-size: 14px; color: #6c757d;">
+              <p><strong>Next Steps:</strong></p>
+              <ul style="margin: 10px 0; padding-left: 20px;">
+                <li>Reply directly to this email to respond to ${validatedData.name}</li>
+                <li>Add to your CRM system if needed</li>
+                <li>Follow up within 24 hours for best results</li>
+              </ul>
+            </div>
+          </div>
+        `,
+        text: `
+New Contact Form Submission
+
+Name: ${validatedData.name}
+Email: ${validatedData.email}
+${validatedData.company ? `Company: ${validatedData.company}` : ''}
+Submitted: ${new Date().toLocaleString()}
+IP Address: ${ip}
+
+Message:
+${validatedData.message}
+
+---
+Reply directly to this email to respond to ${validatedData.name}
+        `.trim(),
+      }
+
+      const emailResult = await resend.emails.send(emailData)
+      
+      if (emailResult.error) {
+        console.error("Email sending failed:", emailResult.error)
+        // Don't fail the request if email fails, but log it
+      } else {
+        console.log("Email sent successfully:", emailResult.data?.id)
+      }
+    } catch (emailError) {
+      console.error("Email service error:", emailError)
+      // Continue processing even if email fails
+    }
+
+    // Log the submission for debugging
     console.log("Contact form submission:", {
       name: validatedData.name,
       email: validatedData.email,
@@ -88,9 +152,6 @@ export async function POST(request: NextRequest) {
       timestamp: new Date().toISOString(),
       ip,
     })
-
-    // Simulate processing delay
-    await new Promise(resolve => setTimeout(resolve, 1000))
 
     return NextResponse.json({
       success: true,

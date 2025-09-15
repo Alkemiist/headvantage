@@ -28,6 +28,7 @@ export interface Persona {
   title: string
   description: string
   icon: string
+  image: string
 }
 
 // Hardware callout data for the hero section

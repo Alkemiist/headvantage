@@ -57,44 +57,48 @@ export const PERSONAS: Persona[] = [
   {
     id: "broadcast",
     title: "Broadcast",
-    description: "Real-time audience analytics and engagement metrics for live broadcasting, enabling instant content optimization and viewer retention strategies.",
-    icon: "Broadcast"
+    description: "HeadVantage delivers real-time POV streams, biometric overlays, and sponsor-ready content that transforms how audiences watch and networks monetize.",
+    icon: "Broadcast",
+    image: "/images/personas/broadcast.png"
   },
   {
     id: "fans",
     title: "Fans", 
-    description: "Personalized fan experiences with live statistics, interactive content, and real-time social engagement during sporting events and entertainment.",
-    icon: "Users"
+    description: "Fans see the action through the eyes of their favorite players, creating immersive, personalized moments that deepen loyalty and open new revenue streams.",
+    icon: "Users",
+    image: "/images/personas/fans.png"
   },
   {
     id: "medical",
     title: "Medical",
-    description: "Critical patient monitoring and real-time health data analysis for emergency response and continuous care management.",
-    icon: "Heart"
+    description: "Impact sensors and eye-tracking provide sideline teams with concussion insights the moment they matter, enabling faster, safer decisions backed by hard data.",
+    icon: "Heart",
+    image: "/images/personas/medical.png"
   },
   {
     id: "coaches-players",
     title: "Coaches & Players",
-    description: "Performance analytics and real-time coaching insights for athletes, providing instant feedback and strategic adjustments during training and competition.",
-    icon: "Trophy"
+    description: "From live impact alerts to player POV film study, HeadVantage empowers teams with the insights they need to optimize performance while protecting their athletes.",
+    icon: "Trophy",
+    image: "/images/personas/player.png"
   }
 ]
 
 // Founders data
 export const FOUNDERS: TeamMember[] = [
   {
-    id: "sarah-chen",
-    name: "Sarah Chen",
+    id: "Jay-Hedley",
+    name: "Jay Hedley",
     role: "CEO & Co-Founder",
-    avatar: "/images/team/sarah-chen.svg",
-    linkedinUrl: "https://linkedin.com/in/sarahchen",
+    avatar: "/images/team/JayHedley.jpg",
+    linkedinUrl: "https://linkedin.com/in/jayhedley",
     bio: "Former VP of Engineering at Google with 15+ years in real-time systems."
   },
   {
-    id: "michael-rodriguez",
-    name: "Michael Rodriguez", 
-    role: "CTO & Co-Founder",
-    avatar: "/images/team/michael-rodriguez.svg",
+    id: "Mike-Sutcliff",
+    name: "Mike Sutcliff", 
+    role: "Chairman & Founder",
+    avatar: "/images/team/MikeSutcliff.png",
     linkedinUrl: "https://linkedin.com/in/michaelrodriguez",
     bio: "Ex-Tesla AI researcher specializing in edge computing and machine learning."
   }
@@ -103,105 +107,105 @@ export const FOUNDERS: TeamMember[] = [
 // Board Advisory members data organized by category
 export const BOARD_ADVISORY_SPORTS_MEDIA: TeamMember[] = [
   {
-    id: "emma-watson",
-    name: "Emma Watson",
-    role: "VP of Product",
-    avatar: "/images/team/emma-watson.svg", 
-    linkedinUrl: "https://linkedin.com/in/emmawatson",
+    id: "Will-McIntosh",
+    name: "Will McIntosh",
+    role: "EVP, NBC Sports",
+    avatar: "/images/team/WillMcintosh.jpeg", 
+    linkedinUrl: "https://www.linkedin.com/in/wmcintosh/",
     bio: "Product leader with expertise in B2B SaaS and real-time analytics platforms."
   },
   {
-    id: "james-wilson",
-    name: "James Wilson",
-    role: "Head of Design",
-    avatar: "/images/team/james-wilson.svg",
-    linkedinUrl: "https://linkedin.com/in/jameswilson",
+    id: "Valerie-Mosely",
+    name: "Valerie Mosely",
+    role: "Board, Draft Kings",
+    avatar: "/images/team/ValerieMosely.jpeg",
+    linkedinUrl: "https://www.linkedin.com/in/valeriemosley/",
     bio: "Design leader focused on creating intuitive user experiences for complex data visualization."
   },
   {
-    id: "maria-garcia",
-    name: "Maria Garcia",
-    role: "VP of Marketing",
-    avatar: "/images/team/maria-garcia.svg",
-    linkedinUrl: "https://linkedin.com/in/mariagarcia",
+    id: "Eric-Betchel",
+    name: "Eric Betchel",
+    role: "Owner, IdeaQuest",
+    avatar: "/images/team/EricBetchel.jpg",
+    linkedinUrl: "https://www.linkedin.com/in/eric-t-bechtel-21a857/",
     bio: "Marketing strategist with expertise in B2B technology and brand positioning."
   },
   {
-    id: "alex-thompson",
-    name: "Alex Thompson",
-    role: "Head of Data Science",
-    avatar: "/images/team/alex-thompson.svg",
-    linkedinUrl: "https://linkedin.com/in/alexthompson",
+    id: "Buck-French",
+    name: "Buck French",
+    role: "Athlete Stock Exchange",
+    avatar: "/images/team/BuckFrench.jpeg",
+    linkedinUrl: "https://www.linkedin.com/in/buck-french-3402741/",
     bio: "Data scientist specializing in real-time analytics and predictive modeling."
   },
   {
-    id: "ryan-davis",
-    name: "Ryan Davis",
-    role: "Head of Customer Success",
-    avatar: "/images/team/ryan-davis.svg",
-    linkedinUrl: "https://linkedin.com/in/ryandavis",
+    id: "Tim-Prukop",
+    name: "Tim Prukop",
+    role: "CEO, ANSRS AI",
+    avatar: "/images/team/TimPrukop.jpeg",
+    linkedinUrl: "https://www.linkedin.com/in/timprukop/",
     bio: "Customer success expert focused on ensuring client value and long-term partnerships."
   },
   {
-    id: "sarah-johnson",
-    name: "Sarah Johnson",
-    role: "Sports Media Director",
-    avatar: "/images/team/sarah-chen.svg", // Reusing avatar for demo
-    linkedinUrl: "https://linkedin.com/in/sarahjohnson",
+    id: "Glenn-Adamo",
+    name: "Glenn Adamo",
+    role: "Producer, NFL.com",
+    avatar: "/images/team/GlennAdamo.jpeg", // Reusing avatar for demo
+    linkedinUrl: "https://www.linkedin.com/in/glennadamo/",
     bio: "Former ESPN executive with 12+ years in sports broadcasting and digital media."
   },
   {
-    id: "mike-chen",
-    name: "Mike Chen",
-    role: "Broadcast Technology Lead",
-    avatar: "/images/team/michael-rodriguez.svg", // Reusing avatar for demo
-    linkedinUrl: "https://linkedin.com/in/mikechen",
+    id: "Ray-Thompson",
+    name: "Ray Thompson",
+    role: "Director, AVID Media Technology",
+    avatar: "/images/team/RayThompson.jpeg", // Reusing avatar for demo
+    linkedinUrl: "https://www.linkedin.com/in/raymondgthompson/",
     bio: "Technology expert specializing in live streaming and real-time broadcast systems."
   },
   {
-    id: "jessica-martinez",
-    name: "Jessica Martinez",
-    role: "Content Strategy Director",
-    avatar: "/images/team/emma-watson.svg", // Reusing avatar for demo
-    linkedinUrl: "https://linkedin.com/in/jessicamartinez",
+    id: "Sam-Jones",
+    name: "Sam Jones",
+    role: "Retired NFL Athlete",
+    avatar: "/images/team/SamJones.jpeg", // Reusing avatar for demo
+    linkedinUrl: "https://www.linkedin.com/in/samjones76/",
     bio: "Content strategist with expertise in sports media and fan engagement platforms."
   },
   {
-    id: "robert-taylor",
-    name: "Robert Taylor",
-    role: "Media Analytics Specialist",
-    avatar: "/images/team/david-kim.svg", // Reusing avatar for demo
-    linkedinUrl: "https://linkedin.com/in/roberttaylor",
+    id: "Tom-Beusse",
+    name: "Tom Beusse",
+    role: "Founder, TFXB Media Consulting",
+    avatar: "/images/team/TomBeusse.png", // Reusing avatar for demo
+    linkedinUrl: "https://www.linkedin.com/in/thomas-beusse/",
     bio: "Analytics expert focused on audience engagement and media performance metrics."
   }
 ]
 
 export const BOARD_ADVISORY_BUSINESS: TeamMember[] = [
   {
-    id: "lisa-patel",
-    name: "Lisa Patel",
-    role: "VP of Sales",
-    avatar: "/images/team/lisa-patel.svg",
-    linkedinUrl: "https://linkedin.com/in/lisapatel", 
+    id: "Alexandra-Rossi",
+    name: "Alexandra Rossi",
+    role: "Strategic Advisor",
+    avatar: "/images/team/AlexandraRossi.jpg",
+    linkedinUrl: "https://www.linkedin.com/in/alxrossi/", 
     bio: "Sales executive with 10+ years in enterprise software and strategic partnerships."
   },
   {
-    id: "sophie-martin",
-    name: "Sophie Martin",
-    role: "VP of Operations",
-    avatar: "/images/team/sophie-martin.svg",
-    linkedinUrl: "https://linkedin.com/in/sophiemartin",
+    id: "Tom-Heshion",
+    name: "Tom Heshion",
+    role: "Fundraising Advisor",
+    avatar: "/images/team/TomHeshion.jpeg",
+    linkedinUrl: "https://www.linkedin.com/in/thomas-heshion-257b12b/",
     bio: "Operations leader with experience scaling technology companies and managing global teams."
   }
 ]
 
 export const BOARD_ADVISORY_HEALTH_SAFETY: TeamMember[] = [
   {
-    id: "david-kim",
-    name: "David Kim",
-    role: "Head of Engineering",
-    avatar: "/images/team/david-kim.svg",
-    linkedinUrl: "https://linkedin.com/in/davidkim",
+    id: "Mark-Novas",
+    name: "Mark Novas",
+    role: "Chief Medical Officer",
+    avatar: "/images/team/MarkNovas.png",
+    linkedinUrl: "https://www.linkedin.com/in/mark-novas-md-mba-b322857/",
     bio: "Full-stack engineer with deep experience in distributed systems and real-time data processing."
   }
 ]
@@ -219,8 +223,7 @@ export const TEAM_MEMBERS: TeamMember[] = [...FOUNDERS, ...BOARD_ADVISORY]
 // Navigation items
 export const NAV_ITEMS = [
   { label: "Home", href: "/" },
-  { label: "Team", href: "/team" },
-  { label: "Contact", href: "#contact" }
+  { label: "Team", href: "/team" }
 ] as const
 
 // Social links

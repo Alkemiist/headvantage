@@ -1,7 +1,6 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Radio, Users, Heart, Trophy } from "lucide-react"
 import { Container } from "@/components/container"
 import { Heading } from "@/components/heading"
 import { SectionWrapper } from "@/components/section-wrapper"
@@ -12,18 +11,11 @@ import { PERSONAS } from "@/lib/data"
  * Personas section showcasing use cases
  * 
  * Key features:
- * - Responsive grid layout (2x2 on tablet, 4 across on desktop)
+ * - 2x2 grid layout with images
  * - Staggered animations for visual appeal
- * - Icon integration with Lucide React
  * - Hover effects for interactivity
+ * - Responsive image display
  */
-
-const iconMap = {
-  Broadcast: Radio,
-  Users,
-  Heart,
-  Trophy,
-}
 
 interface PersonaCardProps {
   persona: typeof PERSONAS[0]
@@ -31,8 +23,6 @@ interface PersonaCardProps {
 }
 
 function PersonaCard({ persona, index }: PersonaCardProps) {
-  const Icon = iconMap[persona.icon as keyof typeof iconMap]
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -43,12 +33,21 @@ function PersonaCard({ persona, index }: PersonaCardProps) {
       }}
       viewport={{ once: true }}
     >
-      <Card hover className="h-full">
-        <CardContent className="p-6 text-center space-y-4">
-          <div className="mx-auto w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
-            <Icon className="h-6 w-6 text-accent" />
-          </div>
-          
+      <Card hover className="h-full overflow-hidden">
+        <img
+          src={persona.image}
+          alt={`${persona.title} persona`}
+          width={800}
+          height={450}
+          className="w-full aspect-video object-cover"
+          onError={(e) => {
+            console.error(`Failed to load image for ${persona.title}:`, persona.image)
+            // Fallback to a working image
+            e.currentTarget.src = "/images/personas/broadcast-placeholder.svg"
+          }}
+        />
+        
+        <CardContent className="p-6 space-y-3">
           <h3 className="text-xl font-semibold">
             {persona.title}
           </h3>
@@ -82,7 +81,7 @@ export function Personas() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {PERSONAS.map((persona, index) => (
             <PersonaCard
               key={persona.id}
