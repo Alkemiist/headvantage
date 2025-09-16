@@ -14,7 +14,7 @@ export const COMPANY_INFO = {
   location: "San Francisco, CA",
   website: "https://headvantage.com",
   email: "hello@headvantage.com",
-  // phone: "+1 (555) 123-4567",
+  phone: "+1 (555) 123-4567",
 } as const
 
 // Split copy content for the home page
