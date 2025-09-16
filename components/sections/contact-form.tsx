@@ -58,27 +58,54 @@ export function ContactForm() {
     setIsSubmitting(true)
     setSubmitStatus("idle")
 
+    // TODO: Form submission commented out for deployment
+    // Simulate form submission for UI testing
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
+      // Simulate API call delay
+      await new Promise(resolve => setTimeout(resolve, 1000))
+      
+      // Simulate successful submission
+      setSubmitStatus("success")
+      reset()
+      
+      // Log form data for debugging (in production, this would be sent to your backend)
+      console.log("Form submission (simulated):", {
+        name: data.name,
+        email: data.email,
+        company: data.company,
+        message: data.message,
+        timestamp: new Date().toISOString()
       })
-
-      if (response.ok) {
-        setSubmitStatus("success")
-        reset()
-      } else {
-        setSubmitStatus("error")
-      }
+      
     } catch (error) {
       console.error("Form submission error:", error)
       setSubmitStatus("error")
     } finally {
       setIsSubmitting(false)
     }
+
+    // Original API call - commented out for deployment
+    // try {
+    //   const response = await fetch("/api/contact", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify(data),
+    //   })
+
+    //   if (response.ok) {
+    //     setSubmitStatus("success")
+    //     reset()
+    //   } else {
+    //     setSubmitStatus("error")
+    //   }
+    // } catch (error) {
+    //   console.error("Form submission error:", error)
+    //   setSubmitStatus("error")
+    // } finally {
+    //   setIsSubmitting(false)
+    // }
   }
 
   return (

@@ -7,14 +7,14 @@ import { TeamMember, Persona, HardwareCallout, SplitCopy } from "./types"
 
 // Company information
 export const COMPANY_INFO = {
-  name: "Acme Vision",
+  name: "HeadVantage",
   tagline: "Real-time intelligence for the moments that matter.",
   description: "Leading provider of real-time intelligence solutions for critical decision-making moments across industries.",
   founded: "2020",
   location: "San Francisco, CA",
-  website: "https://acmevision.com",
-  email: "hello@acmevision.com",
-  phone: "+1 (555) 123-4567",
+  website: "https://headvantage.com",
+  email: "hello@headvantage.com",
+  // phone: "+1 (555) 123-4567",
 } as const
 
 // Split copy content for the home page

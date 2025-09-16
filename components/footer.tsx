@@ -84,13 +84,13 @@ export function Footer() {
                 </a>
               </div>
               <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                <Phone className="h-4 w-4" />
-                <a 
+                {/* <Phone className="h-4 w-4" /> */}
+                {/* <a 
                   href={`tel:${COMPANY_INFO.phone}`}
                   className="hover:text-foreground transition-colors"
-                >
-                  {COMPANY_INFO.phone}
-                </a>
+                > */}
+                  {/* {COMPANY_INFO.phone}
+                </a> */}
               </div>
             </div>
           </div>
