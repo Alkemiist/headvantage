@@ -9,7 +9,7 @@ export const Video = () => {
       <Container>
         <div className="text-center mb-8">
           <Heading level={2} className="mb-4">
-            The Future is Here
+            Capturing the Impossible
           </Heading>
         </div>
         <div className="relative w-full aspect-video rounded-lg overflow-hidden">

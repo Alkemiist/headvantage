@@ -239,6 +239,5 @@ export const SOCIAL_LINKS = {
 // Legal links for footer
 export const LEGAL_LINKS = [
   { label: "Privacy Policy", href: "/privacy" },
-  { label: "Terms of Service", href: "/terms" },
-  { label: "Cookie Policy", href: "/cookies" }
+  { label: "Terms of Service", href: "/terms" }
 ] as const
