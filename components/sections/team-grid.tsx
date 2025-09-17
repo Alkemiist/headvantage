@@ -161,10 +161,10 @@ export function TeamGrid() {
           <Heading level={1} className="mb-4">
             Meet the Team
           </Heading>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          {/* <p className="text-muted-foreground max-w-2xl mx-auto">
             Our diverse team of experts brings together decades of experience 
             in real-time systems, AI, and enterprise software.
-          </p>
+          </p> */}
         </motion.div>
 
         {/* Founders Section */}
@@ -175,14 +175,14 @@ export function TeamGrid() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <div className="text-center mb-8">
+          {/* <div className="text-center mb-8">
             <Heading level={2} className="mb-4 text-2xl">
               Founders
             </Heading>
             <p className="text-muted-foreground max-w-xl mx-auto">
               The visionary leaders who founded Acme Vision and continue to drive our mission forward.
             </p>
-          </div>
+          </div> */}
           
           <div className="space-y-8 max-w-6xl mx-auto">
             {FOUNDERS.map((member, index) => (

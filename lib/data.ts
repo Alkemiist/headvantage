@@ -8,7 +8,7 @@ import { TeamMember, Persona, HardwareCallout, SplitCopy } from "./types"
 // Company information
 export const COMPANY_INFO = {
   name: "HeadVantage",
-  tagline: "Real-time intelligence for the moments that matter.",
+  tagline: "HeadVantage puts the Coach and the Fan in the mind of the Athlete unlike ever before.",
   description: "Leading provider of real-time intelligence solutions for critical decision-making moments across industries.",
   founded: "2020",
   location: "San Francisco, CA",
@@ -102,8 +102,8 @@ export const FOUNDERS: TeamMember[] = [
     role: "Chairman & Founder",
     avatar: "/images/team/MikeSutcliff.png",
     linkedinUrl: "https://www.linkedin.com/in/mikesutcliff/",
-    bio: `Mike Sutcliff is a distinguished business leader with 30+ years at Accenture, where he founded Accenture Digital and helped shape the global digital transformation landscape. A frequent thought leader, he drove innovation that made Accenture Digital an industry benchmark. 
-    After retiring as CEO, Mike co-founded three startups: Cherish Health (healthcare innovation), HeadVantage Fan Experience (sports engagement), and Mobeus Technologies (Immersive AI). He also served as CEO of Mobeus and as an Operating Partner at Advent Private Equity, applying his expertise to scale product engineering and AI ventures.`
+    bio: `Mike Sutcliff is a distinguished business leader with 30+ years at Accenture, where he founded Accenture Digital and helped shape the global digital transformation landscape. 
+    A frequent thought leader, he drove innovation that made Accenture Digital an industry benchmark. After retiring as CEO, Mike co-founded three startups: Cherish Health (healthcare innovation), Mobeus Technologies (Immersive AI), and now HeadVantage. He also served as an Operating Partner at Advent Private Equity, applying his expertise to scale product engineering and AI ventures.`
   }
 ]
 

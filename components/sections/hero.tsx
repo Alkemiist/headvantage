@@ -139,14 +139,14 @@ export function Hero() {
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto space-y-8"
         >
-          <Heading level={1} className="text-white text-purple-glow">
-            {COMPANY_INFO.tagline}
+          <Heading level={2} className="text-white text-purple-glow">
+            HeadVantage puts the Coach and the Fan in the <em>mind</em> of the Athlete unlike ever before.
           </Heading>
           
-          <p className="text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
+          {/* <p className="text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
             Transform your decision-making with real-time intelligence that adapts to the moment. 
             Our cutting-edge platform delivers instant insights when you need them most.
-          </p>
+          </p> */}
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto">
             <Button asChild size="lg" className="group w-full sm:w-auto bg-accent hover:bg-accent/90 text-white purple-glow hover-purple-glow">

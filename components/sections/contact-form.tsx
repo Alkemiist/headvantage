@@ -92,12 +92,12 @@ export function ContactForm() {
           className="text-center mb-12"
         >
           <Heading level={2} className="mb-4">
-            Get in Touch
+            Request a Demo
           </Heading>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          {/* <p className="text-muted-foreground max-w-2xl mx-auto">
             Ready to transform your decision-making with real-time intelligence? 
             Let&apos;s discuss how we can help your organization.
-          </p>
+          </p> */}
         </motion.div>
 
         <motion.div

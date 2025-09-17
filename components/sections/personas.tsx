@@ -75,10 +75,10 @@ export function Personas() {
           <Heading level={2} className="mb-4">
             Who We Serve
           </Heading>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          {/* <p className="text-muted-foreground max-w-2xl mx-auto">
             Our real-time intelligence platform empowers professionals across industries 
             to make critical decisions with confidence.
-          </p>
+          </p> */}
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

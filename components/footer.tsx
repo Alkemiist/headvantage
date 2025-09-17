@@ -36,7 +36,7 @@ export function Footer() {
               <span className="font-bold text-lg">{COMPANY_INFO.name}</span>
             </div>
             <p className="text-sm text-muted-foreground max-w-xs">
-              {COMPANY_INFO.description}
+            HeadVantage puts the Coach and the Fan in the <em>mind</em> of the Athlete unlike ever before.
             </p>
             <div className="flex space-x-4">
               <IconLink
