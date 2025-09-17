@@ -58,54 +58,27 @@ export function ContactForm() {
     setIsSubmitting(true)
     setSubmitStatus("idle")
 
-    // TODO: Form submission commented out for deployment
-    // Simulate form submission for UI testing
     try {
-      // Simulate API call delay
-      await new Promise(resolve => setTimeout(resolve, 1000))
-      
-      // Simulate successful submission
-      setSubmitStatus("success")
-      reset()
-      
-      // Log form data for debugging (in production, this would be sent to your backend)
-      console.log("Form submission (simulated):", {
-        name: data.name,
-        email: data.email,
-        company: data.company,
-        message: data.message,
-        timestamp: new Date().toISOString()
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
       })
-      
+
+      if (response.ok) {
+        setSubmitStatus("success")
+        reset()
+      } else {
+        setSubmitStatus("error")
+      }
     } catch (error) {
       console.error("Form submission error:", error)
       setSubmitStatus("error")
     } finally {
       setIsSubmitting(false)
     }
-
-    // Original API call - commented out for deployment
-    // try {
-    //   const response = await fetch("/api/contact", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(data),
-    //   })
-
-    //   if (response.ok) {
-    //     setSubmitStatus("success")
-    //     reset()
-    //   } else {
-    //     setSubmitStatus("error")
-    //   }
-    // } catch (error) {
-    //   console.error("Form submission error:", error)
-    //   setSubmitStatus("error")
-    // } finally {
-    //   setIsSubmitting(false)
-    // }
   }
 
   return (
@@ -183,7 +156,7 @@ export function ContactForm() {
                   disabled={isSubmitting}
                   placeholder="Tell us about your project and how we can help..."
                   rows={5}
-                  maxLength={15}
+                  maxLength={1000}
                   className="resize-none border border-white/16"
                 />
 

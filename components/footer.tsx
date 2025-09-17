@@ -1,5 +1,6 @@
 import Link from "next/link"
-import { Linkedin, Twitter, Github, Mail, Phone } from "lucide-react"
+import Image from "next/image"
+import { Linkedin, Mail, Phone } from "lucide-react"
 import { COMPANY_INFO, LEGAL_LINKS, SOCIAL_LINKS, NAV_ITEMS } from "@/lib/data"
 import { IconLink } from "@/components/icon-link"
 
@@ -23,8 +24,14 @@ export function Footer() {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="h-8 w-8 rounded bg-accent flex items-center justify-center">
-                <span className="text-accent-foreground font-bold text-sm">AV</span>
+              <div className="h-8 w-8 rounded bg-accent flex items-center justify-center purple-glow-sm">
+                <Image
+                  src="/images/logo.png"
+                  alt="HeadVantage Logo"
+                  width={32}
+                  height={32}
+                  className="h-8 w-8"
+                />
               </div>
               <span className="font-bold text-lg">{COMPANY_INFO.name}</span>
             </div>
@@ -36,18 +43,6 @@ export function Footer() {
                 href={SOCIAL_LINKS.linkedin}
                 label="LinkedIn"
                 icon={Linkedin}
-                external
-              />
-              <IconLink
-                href={SOCIAL_LINKS.twitter}
-                label="Twitter"
-                icon={Twitter}
-                external
-              />
-              <IconLink
-                href={SOCIAL_LINKS.github}
-                label="GitHub"
-                icon={Github}
                 external
               />
             </div>

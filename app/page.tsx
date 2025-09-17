@@ -61,6 +61,31 @@ export default function Home() {
       {/* Personas Section */}
       <Personas />
 
+      {/* Hero Placeholder Image Section */}
+      <SectionWrapper className="py-0">
+        <div className="relative w-full h-96 md:h-[500px] lg:h-[600px] rounded-lg overflow-hidden">
+          <ResponsiveImage
+            src="/images/pilot.webp"
+            alt="Hero placeholder image - to be replaced"
+            fill
+            sizes="100vw"
+            className="object-cover"
+          />
+          {/* Dark gradient overlay for text contrast */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/40 to-black/90" />
+          
+          {/* Centered text overlay */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8">
+            <Heading level={2} className="text-white mb-4 text-3xl sm:text-4xl lg:text-5xl font-bold">
+              The Inspiration
+            </Heading>
+            <p className="text-white/90 text-md sm:text-lg lg:text-xl max-w-4xl leading-relaxed shadow-lg">
+              HeadVantage Sports Technology was inspired by the flight experience and technology used to record and train from the vantage point of Air Force fighter pilots.
+            </p>
+          </div>
+        </div>
+      </SectionWrapper>
+
       {/* Contact Form Section */}
       <ContactForm />
     </>

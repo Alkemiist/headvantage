@@ -28,6 +28,74 @@ interface TeamMemberCardProps {
 }
 
 function TeamMemberCard({ member, index, isFounder = false }: TeamMemberCardProps) {
+  // For founders, use a horizontal layout
+  if (isFounder) {
+    return (
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ 
+          duration: 0.6, 
+          delay: index * 0.1 // Staggered animation
+        }}
+        viewport={{ once: true }}
+      >
+        <Card hover className="w-full">
+          <CardContent className="p-8">
+            <div className="flex flex-col md:flex-row gap-8 items-center md:items-center">
+              {/* Avatar - left side */}
+              <div className="flex-shrink-0 mx-auto md:mx-0">
+                <div className="relative w-40 h-40 rounded-full overflow-hidden">
+                  <ResponsiveImage
+                    src={member.avatar}
+                    alt={`${member.name}, ${member.role}`}
+                    width={160}
+                    height={160}
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+
+              {/* Content - right side */}
+              <div className="flex-1 text-center md:text-left">
+                {/* Name and Role */}
+                <div className="space-y-2 mb-6">
+                  <h3 className="text-2xl font-semibold">
+                    {member.name}
+                  </h3>
+                  <p className="text-lg text-muted-foreground">
+                    {member.role}
+                  </p>
+                </div>
+
+                {/* Bio */}
+                <div className="mb-6">
+                  <p className="text-muted-foreground leading-relaxed text-base">
+                    {member.bio || `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.`}
+                  </p>
+                </div>
+
+                {/* LinkedIn Link */}
+                {member.linkedinUrl && (
+                  <div className="flex justify-center md:justify-start">
+                    <IconLink
+                      href={member.linkedinUrl}
+                      label={`${member.name} on LinkedIn`}
+                      icon={Linkedin}
+                      external
+                      className="text-muted-foreground hover:text-accent"
+                    />
+                  </div>
+                )}
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </motion.div>
+    )
+  }
+
+  // For non-founders, use the original vertical layout
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -38,35 +106,28 @@ function TeamMemberCard({ member, index, isFounder = false }: TeamMemberCardProp
       }}
       viewport={{ once: true }}
     >
-      <Card hover className="h-full">
-        <CardContent className={`text-center space-y-4 ${isFounder ? 'p-8' : 'p-6'}`}>
-          {/* Avatar - larger for founders */}
-          <div className={`relative mx-auto rounded-full overflow-hidden ${isFounder ? 'w-32 h-32' : 'w-24 h-24'}`}>
+      <Card hover className="h-full w-[300px]">
+        <CardContent className="p-6 text-center space-y-4">
+          {/* Avatar */}
+          <div className="relative mx-auto w-24 h-24 rounded-full overflow-hidden">
             <ResponsiveImage
               src={member.avatar}
               alt={`${member.name}, ${member.role}`}
-              width={isFounder ? 128 : 96}
-              height={isFounder ? 128 : 96}
+              width={96}
+              height={96}
               className="object-cover"
             />
           </div>
 
           {/* Name and Role */}
           <div className="space-y-1">
-            <h3 className={`font-semibold ${isFounder ? 'text-xl' : 'text-lg'}`}>
+            <h3 className="text-lg font-semibold">
               {member.name}
             </h3>
-            <p className={`text-muted-foreground ${isFounder ? 'text-base' : 'text-sm'}`}>
+            <p className="text-sm text-muted-foreground">
               {member.role}
             </p>
           </div>
-
-          {/* Bio */}
-          {member.bio && (
-            <p className={`text-muted-foreground leading-relaxed ${isFounder ? 'text-sm' : 'text-xs'}`}>
-              {member.bio}
-            </p>
-          )}
 
           {/* LinkedIn Link */}
           {member.linkedinUrl && (
@@ -123,7 +184,7 @@ export function TeamGrid() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="space-y-8 max-w-6xl mx-auto">
             {FOUNDERS.map((member, index) => (
               <TeamMemberCard
                 key={member.id}

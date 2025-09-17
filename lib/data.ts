@@ -13,7 +13,7 @@ export const COMPANY_INFO = {
   founded: "2020",
   location: "San Francisco, CA",
   website: "https://headvantage.com",
-  email: "hello@headvantage.com",
+  email: "hello@headvantagefx.com",
   phone: "+1 (555) 123-4567",
 } as const
 
@@ -91,16 +91,19 @@ export const FOUNDERS: TeamMember[] = [
     name: "Jay Hedley",
     role: "CEO & Co-Founder",
     avatar: "/images/team/JayHedley.jpg",
-    linkedinUrl: "https://linkedin.com/in/jayhedley",
-    bio: "Former VP of Engineering at Google with 15+ years in real-time systems."
+    linkedinUrl: "https://www.linkedin.com/in/jay-hedley/",
+    bio: `Jay Hedley is a decorated U.S. Air Force fighter pilot turned entrepreneur and Co-Founder/CEO of HeadVantage, a sports-tech company embedding eye-tracking and POV cameras into athletes' helmets. 
+    He previously helped build Accenture's $1.6B digital portfolio in IoT, AI, and marketing, earning Global Inventor of the Year and multiple patents. In the Air Force, he flew 250+ combat missions, received 10 Air Medals, and held key leadership roles. 
+    Jay holds an MBA from Harvard, an MS in Aeronautics (Embry-Riddle), and a BS in Engineering (WPI). He is also Founder of Warbird National, an aviation-themed golf and STEM center honoring military heritage.`,
   },
   {
     id: "Mike-Sutcliff",
     name: "Mike Sutcliff", 
     role: "Chairman & Founder",
     avatar: "/images/team/MikeSutcliff.png",
-    linkedinUrl: "https://linkedin.com/in/michaelrodriguez",
-    bio: "Ex-Tesla AI researcher specializing in edge computing and machine learning."
+    linkedinUrl: "https://www.linkedin.com/in/mikesutcliff/",
+    bio: `Mike Sutcliff is a distinguished business leader with 30+ years at Accenture, where he founded Accenture Digital and helped shape the global digital transformation landscape. A frequent thought leader, he drove innovation that made Accenture Digital an industry benchmark. 
+    After retiring as CEO, Mike co-founded three startups: Cherish Health (healthcare innovation), HeadVantage Fan Experience (sports engagement), and Mobeus Technologies (Immersive AI). He also served as CEO of Mobeus and as an Operating Partner at Advent Private Equity, applying his expertise to scale product engineering and AI ventures.`
   }
 ]
 
@@ -228,7 +231,7 @@ export const NAV_ITEMS = [
 
 // Social links
 export const SOCIAL_LINKS = {
-  linkedin: "https://linkedin.com/company/acmevision",
+  linkedin: "https://www.linkedin.com/company/headvantagefx/",
   twitter: "https://twitter.com/acmevision",
   github: "https://github.com/acmevision"
 } as const
