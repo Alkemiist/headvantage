@@ -17,7 +17,7 @@ import { Resend } from "resend"
 const rateLimitStore = new Map<string, { count: number; resetTime: number }>()
 
 // Initialize Resend
-const resend = new Resend(process.env.RESEND_API_KEY)
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null
 
 // Contact form validation schema
 const contactSchema = z.object({
@@ -78,13 +78,14 @@ export async function POST(request: NextRequest) {
     }
 
     // Send email notification
-    try {
-      console.log("Attempting to send email...")
-      console.log("FROM_EMAIL:", process.env.FROM_EMAIL)
-      console.log("CONTACT_EMAIL:", process.env.CONTACT_EMAIL)
-      console.log("RESEND_API_KEY exists:", !!process.env.RESEND_API_KEY)
-      
-      const emailData = {
+    if (resend) {
+      try {
+        console.log("Attempting to send email...")
+        console.log("FROM_EMAIL:", process.env.FROM_EMAIL)
+        console.log("CONTACT_EMAIL:", process.env.CONTACT_EMAIL)
+        console.log("RESEND_API_KEY exists:", !!process.env.RESEND_API_KEY)
+        
+        const emailData = {
         from: "Headvantage Contact Form <onboarding@resend.dev>", // Testing: use Resend's verified domain
         to: ["pablo@programmingpablo.com"], // Testing: your verified address
         subject: `New Contact Form Submission from ${validatedData.name}`,
@@ -145,9 +146,12 @@ Reply directly to this email to respond to ${validatedData.name}
         console.log("✅ Email sent successfully:", emailResult.data?.id)
       }
     } catch (emailError) {
-      console.error("❌ Email service error:", emailError)
-      console.error("Error stack:", emailError instanceof Error ? emailError.stack : 'No stack trace')
-      // Continue processing even if email fails
+        console.error("❌ Email service error:", emailError)
+        console.error("Error stack:", emailError instanceof Error ? emailError.stack : 'No stack trace')
+        // Continue processing even if email fails
+      }
+    } else {
+      console.log("⚠️ Email service not configured - RESEND_API_KEY not set")
     }
 
     // Log the submission for debugging
