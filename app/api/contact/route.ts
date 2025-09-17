@@ -85,6 +85,7 @@ export async function POST(request: NextRequest) {
         console.log("CONTACT_EMAIL:", process.env.CONTACT_EMAIL)
         console.log("RESEND_API_KEY exists:", !!process.env.RESEND_API_KEY)
         
+        // this is the email that will be sent to the contact email
         const emailData = {
         from: "Headvantage Contact Form <onboarding@resend.dev>", // Testing: use Resend's verified domain
         to: ["pablo@programmingpablo.com"], // Testing: your verified address

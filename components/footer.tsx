@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Linkedin, Mail, Phone } from "lucide-react"
+import { Linkedin, Mail } from "lucide-react"
 import { COMPANY_INFO, LEGAL_LINKS, SOCIAL_LINKS, NAV_ITEMS } from "@/lib/data"
 import { IconLink } from "@/components/icon-link"
 

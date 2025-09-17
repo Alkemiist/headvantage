@@ -6,6 +6,7 @@ import { ResponsiveImage } from "@/components/responsive-image";
 import { Container } from "@/components/container";
 import { SectionWrapper } from "@/components/section-wrapper";
 import { Heading } from "@/components/heading";
+import { Video } from "@/components/sections/video";
 
 /**
  * Home page - Main landing page
@@ -57,6 +58,9 @@ export default function Home() {
           </div>
         </Container>
       </SectionWrapper>
+
+      { /* Video Section */ }
+      <Video />
 
       {/* Personas Section */}
       <Personas />
