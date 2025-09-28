@@ -47,7 +47,7 @@ export default function Home() {
             {/* Content */}
             <div className="space-y-6 text-left">
               <Heading level={2} className="mb-4">
-                The Hardware
+                Hardware
               </Heading>
               <p className="text-muted-foreground leading-relaxed">
                 Our hardware system combines HD video capture with superior image stability, integrated eye-tracking with gaze 
