@@ -137,7 +137,7 @@ export const BOARD_ADVISORY_SPORTS_MEDIA: TeamMember[] = [
     id: "Buck-French",
     name: "Buck French",
     role: "Athlete Stock Exchange",
-    avatar: "/images/team/BuckFrench.jpeg",
+    avatar: "/images/team/BuckFrench.png",
     linkedinUrl: "https://www.linkedin.com/in/buck-french-3402741/",
     bio: "Data scientist specializing in real-time analytics and predictive modeling."
   },
@@ -169,7 +169,7 @@ export const BOARD_ADVISORY_SPORTS_MEDIA: TeamMember[] = [
     id: "Sam-Jones",
     name: "Sam Jones",
     role: "Retired NFL Athlete",
-    avatar: "/images/team/SamJones.jpeg", // Reusing avatar for demo
+    avatar: "/images/team/SamJones.png",
     linkedinUrl: "https://www.linkedin.com/in/samjones76/",
     bio: "Content strategist with expertise in sports media and fan engagement platforms."
   },

@@ -44,14 +44,14 @@ function TeamMemberCard({ member, index, isFounder = false }: TeamMemberCardProp
           <CardContent className="p-8">
             <div className="flex flex-col md:flex-row gap-8 items-center md:items-center">
               {/* Avatar - left side */}
-              <div className="flex-shrink-0 mx-auto md:mx-0">
-                <div className="relative w-40 h-40 rounded-full overflow-hidden">
+              <div className="mx-auto shrink-0 md:mx-0">
+                <div className="relative h-40 w-40 overflow-hidden rounded-full bg-muted/40 shadow-md ring-2 ring-border/50">
                   <ResponsiveImage
                     src={member.avatar}
                     alt={`${member.name}, ${member.role}`}
-                    width={160}
-                    height={160}
-                    className="object-cover"
+                    fill
+                    sizes="160px"
+                    className="object-cover object-top"
                   />
                 </div>
               </div>
@@ -109,13 +109,13 @@ function TeamMemberCard({ member, index, isFounder = false }: TeamMemberCardProp
       <Card hover className="h-full w-[300px]">
         <CardContent className="p-6 text-center space-y-4">
           {/* Avatar */}
-          <div className="relative mx-auto w-24 h-24 rounded-full overflow-hidden">
+          <div className="relative mx-auto h-24 w-24 shrink-0 overflow-hidden rounded-full bg-muted/40 shadow-sm ring-2 ring-border/40">
             <ResponsiveImage
               src={member.avatar}
               alt={`${member.name}, ${member.role}`}
-              width={96}
-              height={96}
-              className="object-cover"
+              fill
+              sizes="96px"
+              className="object-cover object-top"
             />
           </div>
 
